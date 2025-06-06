@@ -19,9 +19,11 @@ class ShoppingList
                 $this->list[$item] = $quantity;
             }
         }
+        else if ($instruction == "eliminar"){
+            unset($this->list[$item]);
+        }
         ksort($this->list);
         $result = [];
-        var_dump($this->list);
         foreach ($this->list as $item => $quantity){
             $result[] = "$item x$quantity";
         }

@@ -31,5 +31,15 @@ class ShoppingListTest extends TestCase
         $this->assertEquals("pan x3", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenEliminarInstructionWithExistingItemItGetsDeleted()
+    {
+        $this->shoppingList->manageList("añadir pan");
+        $result = $this->shoppingList->manageList("eliminar pan");
+        $this->assertEquals("",$result);
+    }
+
 
 }

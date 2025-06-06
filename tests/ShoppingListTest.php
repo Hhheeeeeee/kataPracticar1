@@ -21,5 +21,15 @@ class ShoppingListTest extends TestCase
         $this->assertEquals("pan x1", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenAñadirInstructionWithExistingItemReturnsItemAndNewQuantity()
+    {
+        $result = $this->shoppingList->manageList("añadir pan");
+        $result = $this->shoppingList->manageList("añadir pan 2");
+        $this->assertEquals("pan x3", $result);
+    }
+
 
 }

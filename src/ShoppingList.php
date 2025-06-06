@@ -22,12 +22,17 @@ class ShoppingList
         else if ($instruction == "eliminar"){
             unset($this->list[$item]);
         }
+        return $this->printList();
+
+    }
+
+    private function printList():string
+    {
         ksort($this->list);
         $result = [];
         foreach ($this->list as $item => $quantity){
             $result[] = "$item x$quantity";
         }
         return implode(" ", $result);
-
     }
 }

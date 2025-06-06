@@ -41,5 +41,14 @@ class ShoppingListTest extends TestCase
         $this->assertEquals("",$result);
     }
 
+    /**
+     * @test
+     */
+    public function givenEliminarInstructionWithInExistingItemReturnsWarning()
+    {
+        $result = $this->shoppingList->manageList("eliminar pan");
+        $this->assertEquals("El producto seleccionado no existe",$result);
+    }
+
 
 }

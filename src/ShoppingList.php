@@ -20,6 +20,9 @@ class ShoppingList
             }
         }
         else if ($instruction == "eliminar"){
+            if (!isset($this->list[$item])){
+                return "El producto seleccionado no existe";
+            }
             unset($this->list[$item]);
         }
         return $this->printList();
